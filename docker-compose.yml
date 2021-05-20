@@ -1,0 +1,15 @@
+version: "2"
+services:
+    lighthouse:
+        container_name: lighthouse
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        command: "http://127.0.0.1:8123"
+        ports:
+            - 8181:8181
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 10.19.0.0/16
